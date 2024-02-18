@@ -18,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish": "pnpm run build && aws s3 sync \"build\" \"s3://langtons-ant-hosting-bucket\" & aws cloudfront create-invalidation --distribution-id EZCOLCR4XCJ24 --paths \"/*\""
   },
   "eslintConfig": {
     "extends": [
